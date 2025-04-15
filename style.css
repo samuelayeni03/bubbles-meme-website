@@ -16,6 +16,8 @@
     color: #fff;
   }
 
+  .home {min-width: 100vw;}
+
   .hamburger {
     display: none;
     flex-direction: column;
@@ -38,7 +40,7 @@
   }
 
   .container {
-    margin-top: 400px;
+    margin-top: 370px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -143,7 +145,7 @@
     }
 
     .roadmap-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.5);
       border: 1px solid #FFD700;
       padding: 1.5rem;
       border-radius: 20px;
@@ -165,6 +167,38 @@
 
     .team-member h4, .team-member p {
       margin: 0.5rem 0;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      background: #140d1d;
+      text-align: center;
+      border-top: 2px solid #FFD700;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-socials img {
+      width: 24px;
+      height: 24px;
     }
 
   @media (max-width: 768px) {
