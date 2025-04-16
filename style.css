@@ -7,13 +7,13 @@
   html {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/background-img.jpg) no-repeat center center fixed;
 
-    /* CSS3 */
+    background-attachment: fixed;
     background-size: cover;
 
     /*other browser specific */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 
     /* non-standard for IE */
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.yourImage.jpg', sizingMethod='scale');
