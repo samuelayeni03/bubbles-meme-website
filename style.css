@@ -9,11 +9,10 @@
 
     background-attachment: fixed;
     background-size: cover;
-
-    /*other browser specific */
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
+    z-index: -1;
 
     /* non-standard for IE */
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.yourImage.jpg', sizingMethod='scale');
@@ -26,7 +25,7 @@
     color: #fff;
   }
 
-  .home {min-width: 100vw;}
+  .home {max-width: 100vw;}
 
   .hamburger {
     display: none;
@@ -50,7 +49,7 @@
   }
 
   .container {
-    margin-top: 370px;
+    margin-top: 330px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -76,6 +75,8 @@
     z-index: 1;
   }
 
+
+
   .logo-monkey {
     max-width: 220px;
     margin-bottom: 1.5rem;
@@ -95,6 +96,7 @@
   }
 
   .btn {
+    font: 1em 'Press Start 2P', cursive;
     padding: 1rem 2rem;
     background: linear-gradient(135deg, #ffcc00, #ff6600);
     color: #000;
@@ -148,6 +150,21 @@
       margin-bottom: 2rem;
     }
 
+    .bubbles-image {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      align-items: center;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.596);
+      padding: 1rem;
+      margin: 10px auto;
+    }
+
+    .about .buy {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+    }
     .roadmap-grid {
       display: grid;
       grid-template-columns: repeat(3fr, minmax(250px, 1fr));
@@ -228,6 +245,15 @@
     .btn {
       font-size: 0.8rem;
       padding: 0.7rem 1.5rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     
 
