@@ -4,15 +4,25 @@
     box-sizing: border-box;
   }
 
+  html {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/background-img.jpg) no-repeat center center fixed;
+
+    /* CSS3 */
+    background-size: cover;
+
+    /*other browser specific */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    /* non-standard for IE */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.yourImage.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='yourImage.jpg', sizingMethod='scale')"
+}
+
   body {
     font-family: 'Press Start 2P', cursive;
     /*background: linear-gradient(to bottom, #1a1a40, #301934);*/
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/background-img.jpg);
-    background-position: center top;
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     color: #fff;
   }
 
@@ -197,8 +207,8 @@
     }
 
     .footer-socials img {
-      width: 24px;
-      height: 24px;
+      width: 60px;
+      margin: 0 1rem;
     }
 
   @media (max-width: 768px) {
