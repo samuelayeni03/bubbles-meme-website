@@ -10,10 +10,6 @@
 <body>
   <nav>
     <div style="font-size: 2rem; font-weight: bold;">BUBBLES</div>
-    <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
     </div>
     <ul>
       <li>Home</li>
@@ -21,33 +17,36 @@
       <li>Roadmap</li>
       <li>Team</li>
     </ul>
+    <div id="soundToggle" style="cursor: pointer; font-size: 1.2rem;">🔊</div>
   </nav>
   <section class="home" id="home">
     <div class="container">
       <div class="hero-content">
-        <!--<img src="https://i.ibb.co/Q9XbtD0/monkey-thriller.png" alt="Cool Monkey" class="logo-monkey">-->
+        <img src="img/bubbles2.jpg" alt="Cool Monkey" class="hero-image" />
         <h1>BUBBLES</h1>
         <p>BUBBLES is a chimpanzee once kept as a pet by the American singer Micheal Jackson who bought him from a Texas
           research facility in the 1980s.</p>
-        <button class="btn">BUY</button>
-        <button class="btn">Join Telegram</button>
+        <div class="btn-group">
+          <button class="btn" id="btn1">BUY</button>
+          <button class="btn" id="btn2">Join Telegram</button>
+        </div>
       </div>
     </div>
   </section>
   <section id="about">
     <h2 class="section-title">ABOUT</h2>
     <p>BUBBLES is a community-driven meme coin built for fun, virality, and purpose, based on the legendary BUBBLES the chimp.</p>
-    <img src="img/bubbles3.jpg" alt="Bubbles" class="bubbles-image">
+    <img src="img/hero.jpg" alt="Bubbles" class="bubbles-image">
     <p>BUBBLES was initially kept at the Jackson familyhome in Encisco, LA but was moved to the Neverland Ranch in 1988.</p>
-    <img src="img/bubbles2.jpg" alt="Bubbles" class="bubbles-image">
+    <img src="img/bubbles3.jpg" alt="Bubbles" class="bubbles-image">
     <p>In 2003, Bubbles was moved to the Center for Great Apes in Wauchula, Florida, where he lives to this day, or so we thought...</p>
     <img src="img/bubbles4.jpg" alt="Bubbles" class="bubbles-image">
     <p>BUBBLES has mysteriously gone missing, there was no forced entry, no disturbed habitat, The only clue left behind was a 
       perfectly scorched circle in the ground, and a note that read "I am coming for you".</p>
-    <img src="img/bubbles1.jpg" alt="Bubbles" class="bubbles-image">
+    <img src="img/bubbles5.jpg" alt="Bubbles" class="bubbles-image">
     <p>We are on a mission to find BUBBLES, and we need your help! Join us in our quest to uncover the truth behind BUBBLES' disappearance.</p>
     </p>
-    <button class="btn">Buy Now</button>
+    <button class="btn" style="margin-top: 2rem; animation: pulse 1.5s infinite alternate;">Buy Now</button>
   </section>
 
   <section id="roadmap">
@@ -124,6 +123,35 @@
       <a href="#"><img src="img/pumpfun.png" alt="Pumpfun"></a>
     </div>
   </footer>
-  <script src="index.js"></script>
+  <audio id="themeAudio" loop autoplay>
+    <source src="img/background-music.mp3" type="audio/mpeg" loop autoplay>
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    const soundToggle = document.getElementById('soundToggle');
+    const audio = document.getElementById('themeAudio');
+  
+    // Set volume to low
+    audio.volume = 0.1;
+  
+    let isPlaying = true;
+  
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  
+    soundToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        soundToggle.textContent = '🔇';
+      } else {
+        audio.play();
+        soundToggle.textContent = '🔊';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>  
 </body>
 </html>
