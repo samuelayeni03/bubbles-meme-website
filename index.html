@@ -124,7 +124,7 @@
     </div>
   </footer>
   <audio id="themeAudio" loop autoplay>
-    <source src="img/background-music.mp3" type="audio/mpeg" loop autoplay>
+    <source src="img/background-music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
   <script>
@@ -134,24 +134,32 @@
     const audio = document.getElementById('themeAudio');
   
     // Set volume to low
-    audio.volume = 0.1;
+    audio.volume = 0.05;
   
-    let isPlaying = true;
-  
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  
-    soundToggle.addEventListener('click', () => {
-      if (isPlaying) {
-        audio.pause();
-        soundToggle.textContent = '🔇';
-      } else {
-        audio.play();
+    let isPlaying = false;
+
+  soundToggle.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      soundToggle.textContent = '🔊';
+    } else {
+      audio.pause();
+      soundToggle.textContent = '🔇';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Ensure audio doesn't start automatically without interaction
+  document.body.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play().then(() => {
+        isPlaying = true;
         soundToggle.textContent = '🔊';
-      }
-      isPlaying = !isPlaying;
+      }).catch(() => {
+        // Autoplay blocked, wait for user interaction
     });
+  }
+}, { once: true });
   </script>  
 </body>
 </html>
