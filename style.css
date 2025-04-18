@@ -195,6 +195,12 @@
     padding: 1.5rem;
     border-radius: 20px;
   }
+  
+.vision {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
 
   #btn1 {
     background: gray;
